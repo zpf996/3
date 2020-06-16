@@ -1,19 +1,21 @@
 package util;
 
 import com.mysql.cj.protocol.Resultset;
-
+import java.sql.Connection;
 import java.sql.*;
 public class DBconn {
-    static String url="jdbc:mysql://localhost:3306/medicare";//sqlpath
+    static String url="jdbc:mysql://localhost:3306/medicare?useSSL=false&serverTimezone=UTC";//sqlpath
     static String username="root";
     static String password="root";
     static Connection conn=null;
     static ResultSet rs=null;
     static PreparedStatement ps=null;
     public static void init(){
+
         try{
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn=DriverManager.getConnection(url,username,password);
+            System.out.println("password");
         } catch (Exception e){
             System.out.println("sql driver is failed for init");
         }
@@ -40,10 +42,27 @@ public class DBconn {
     }
     public static void closeConn(){
         try{
-            conn.close();
-        } catch (SQLException e) {
-            System.out.println("sql数据库关闭异常");
+            if(rs!=null){
+                rs.close();
+            }
+        }catch (SQLException e){
             e.printStackTrace();
-        }
+        }finally {
+            try{
+            if(ps!=null){
+                ps.close();
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+                try{
+                    if(conn!=null){
+                        conn.close();
+                    }
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+            }
+            }
     }
 }

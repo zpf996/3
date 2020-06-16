@@ -6,12 +6,35 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
 <title>Login</title>
+<script>
+
+    window.console.log("a")
+    function a() {
+        console.log("1")
+        var num = document.getElementsByName()
+
+
+        if (num.is("a")) {
+            document.action = "login_admin"
+        } else if(num.is("b")) {
+            document.action = "login_Doctor"
+        }else{
+            document.action = "login_patient"
+        }
+    }
+</script>
 
 <head>
+
     <style>
         html {
             width: 100%;
@@ -73,7 +96,7 @@
 
         #o {
             text-decoration: none;
-            out-line: nonecolor: #*****;
+            out-line: nonecolor;
             color: azure;
         }
 
@@ -189,20 +212,21 @@
 <body>
 <div id="login">
     <h1>Login</h1>
-    <form method="post" action="Login">
-        <input type="text" required="required" placeholder="username" name="u"></input>
-        <input type="password" required="required" placeholder="password" name="p"></input>
+    <form name="form" action="" method="post" >
+        <input type="text" required="required" placeholder="username" name="name"></input>
+        <input type="password" required="required" placeholder="password" name="password"></input>
         <button class="bu" type="button"><a id="o" href="Reg_patient.jsp">register</a></button>
         <br />
-        <select name="type" class="bu">
-            <option value="1">Patient</option>
-            <option value="2">Doctor</option>
-            <option value="3">Admin</option>
+        <select name="m" class="bu">
+            <option name="a" value="1">Patient</option>
+            <option name="b" value="2">Doctor</option>
+            <option name="c" value="3">Admin</option>
         </select>
+        <br>
+        <input type="submit" value="登录" οnclick="a()">
         <br />
-        <button class="but" type="submit">login</button>
+        <button class="but" type="submit" οnclick="a()">login</button>
     </form>
 </div>
 </body>
-
 </html>

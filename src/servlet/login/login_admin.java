@@ -20,7 +20,7 @@ public class login_admin extends HttpServlet {
         String password=request.getParameter("password");
         AdminDaoImp ud=new AdminDaoImp();
         if(ud.login(name,password)){
-            request.setAttribute("xiaoxin","欢迎用户"+name);
+            //request.setAttribute("xiaoxin","欢迎用户"+name);
             request.getRequestDispatcher("/Admin_1.jsp").forward(request,response);
         }else{
             response.sendRedirect("login.jsp");

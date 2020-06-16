@@ -13,7 +13,7 @@ public class DoctorDaoImp implements DoctorDao {
         boolean flag=false;
         try{
             DBconn.init();
-            ResultSet rs=DBconn.selectSql("select from doctor where Doctor Name='"+name+"'and password='"+password+"'");
+            ResultSet rs=DBconn.selectSql("select * from doctor where DoctorName='"+name+"'and password='"+password+"'");
             while(rs.next()){
                 if(rs.getString("Doctor Name").equals(name)&&
                         rs.getString("password").equals(password)){

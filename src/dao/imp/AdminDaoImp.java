@@ -14,7 +14,7 @@ public class AdminDaoImp implements AdminDao{
         boolean flag=false;
         try{
             DBconn.init();
-            ResultSet rs=DBconn.selectSql("select from admin where Username='"+name+"'and Password='"+password+"'");
+            ResultSet rs=DBconn.selectSql("select * from admin where Username='"+name+"'and Password='"+password+"'");
             while(rs.next()){
                 if(rs.getString("Username").equals(name)&&rs.getString("Password").equals(password)){
                     flag=true;

@@ -1,6 +1,6 @@
 package servlet.login;
 
-import dao.imp.AdminDaoImp;
+import dao.imp.DoctorDaoImp;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +18,7 @@ public class login_Doctor extends HttpServlet {
             throws ServletException, IOException {
         String name=request.getParameter("name");
         String password=request.getParameter("password");
-        AdminDaoImp ud=new AdminDaoImp();
+        DoctorDaoImp ud=new DoctorDaoImp();
         if(ud.login(name,password)){
             request.setAttribute("xiaoxin","欢迎用户"+name);
             request.getRequestDispatcher("/Doctor_view.jsp").forward(request,response);

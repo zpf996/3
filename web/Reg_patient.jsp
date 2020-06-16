@@ -224,7 +224,7 @@
         <p>Doctor message</p>
 
         <div class="container">
-            <form action="/action_page.php">
+            <form action="reg_patient">
                 <div class="row">
                     <div class="col-25">
                         <label for="fname">Name</label>

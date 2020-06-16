@@ -21,7 +21,7 @@ public class login_patient extends HttpServlet {
         DoctorDaoImp ud=new DoctorDaoImp();
         if(ud.login(name,password)){
             request.setAttribute("xiaoxin","欢迎用户"+name);
-            request.getRequestDispatcher("/Patient_view.jsp").forward(request,response);
+            request.getRequestDispatcher("Patient_view.jsp").forward(request,response);
         }else{
             response.sendRedirect("login.jsp");
         }
