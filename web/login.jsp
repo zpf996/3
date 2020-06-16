@@ -15,24 +15,8 @@
 <html>
 <meta charset="UTF-8">
 <title>Login</title>
-<script>
 
-    window.console.log("a")
-    function a() {
-        console.log("1")
-        var num = document.getElementsByName()
-
-
-        if (num.is("a")) {
-            document.action = "login_admin"
-        } else if(num.is("b")) {
-            document.action = "login_Doctor"
-        }else{
-            document.action = "login_patient"
-        }
-    }
-</script>
-
+<script type="text/javascript" charset="utf-8" src="${pageContext.request.contextPath}/js/aw.js"></script>
 <head>
 
     <style>
@@ -212,21 +196,36 @@
 <body>
 <div id="login">
     <h1>Login</h1>
-    <form name="form" action="" method="post" >
+    <form name="form" action="login_patient" method="post" >
         <input type="text" required="required" placeholder="username" name="name"></input>
         <input type="password" required="required" placeholder="password" name="password"></input>
         <button class="bu" type="button"><a id="o" href="Reg_patient.jsp">register</a></button>
         <br />
         <select name="m" class="bu">
-            <option name="a" value="1">Patient</option>
-            <option name="b" value="2">Doctor</option>
-            <option name="c" value="3">Admin</option>
+            <option  value="1">Patient</option>
+            <option  value="2">Doctor</option>
+            <option  value="3">Admin</option>
         </select>
         <br>
-        <input type="submit" value="登录" οnclick="a()">
-        <br />
-        <button class="but" type="submit" οnclick="a()">login</button>
+        <button id="add" class="but" type="submit" onclick="aw()">login</button>
     </form>
 </div>
 </body>
+
+
+
 </html>
+<%--<script type="text/javascript" charset="utf-8">--%>
+<%--    document.getElementById('add').addEventListener('click', function(){--%>
+<%--        console.log("1");--%>
+<%--        //alert("asdas");--%>
+<%--        var num = document.form.m.value;--%>
+
+<%--        if (num === 3) {--%>
+<%--            document.action = "login_admin";--%>
+<%--        } else if (num === 2) {--%>
+<%--            document.action = "login_Doctor";--%>
+<%--        } else {--%>
+<%--            document.action = "login_patient";--%>
+<%--        }});--%>
+<%--</script>--%>
