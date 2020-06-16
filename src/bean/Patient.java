@@ -2,6 +2,7 @@ package bean;
 
 public class Patient {
     private String Id;
+    private String password;
     private String PatientName;
     private String FamilyName;
     private String Age;
@@ -9,6 +10,14 @@ public class Patient {
     private String Email;
     private String Contact;
     private byte[] photo;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getId() {
         return Id;

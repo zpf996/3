@@ -27,7 +27,7 @@ public class DoctorDaoImp implements DoctorDao {
     }
 
     @Override
-    public List<Doctor> getAdminAll() {
+    public List<Doctor> getDoctorAll() {
         List<Doctor> list = new ArrayList<Doctor>();
         try {
             DBconn.init();
@@ -105,5 +105,4 @@ public class DoctorDaoImp implements DoctorDao {
         DBconn.closeConn();
        return flag;
     }
-
 }

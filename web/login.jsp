@@ -192,7 +192,7 @@
     <form method="post" action="Login">
         <input type="text" required="required" placeholder="username" name="u"></input>
         <input type="password" required="required" placeholder="password" name="p"></input>
-        <button class="bu" type="button"><a id="o" href="livemessage.html">register</a></button>
+        <button class="bu" type="button"><a id="o" href="Reg_patient.jsp">register</a></button>
         <br />
         <select name="type" class="bu">
             <option value="1">Patient</option>
