@@ -197,16 +197,16 @@
 <body>
 <div id="login">
     <h1>Login</h1>
-    <form name="form" action="login_patient" method="post" >
+    <form name="form" action="login_admin" method="post" >
         <input type="text" required="required" placeholder="username" name="name"></input>
         <input type="password" required="required" placeholder="password" name="password"></input>
         <button class="bu" type="button"><a id="o" href="Reg_patient.jsp">register</a></button>
         <br />
-<%--        <select name="m" class="bu">--%>
-<%--            <option  value="1">Patient</option>--%>
-<%--            <option  value="2">Doctor</option>--%>
-<%--            <option  value="3">Admin</option>--%>
-<%--        </select>--%>
+        <%--        <select name="m" class="bu">--%>
+        <%--            <option  value="1">Patient</option>--%>
+        <%--            <option  value="2">Doctor</option>--%>
+        <%--            <option  value="3">Admin</option>--%>
+        <%--        </select>--%>
         <button id="add" class="but" type="submit" >login</button>
     </form>
 </div>

@@ -36,10 +36,10 @@
 					<ul class="main-menu nav navbar-nav navbar-right">
 						<li><a href="index.jsp">Home</a></li>
 						<li><a href="Registered subject.jsp">Registered subject</a></li>
-<%--						<li><a href="Admin Login.jsp">Admin Login</a></li>--%>
-<%--						<li><a href="Doctor Login.jsp">Doctor Login</a></li>--%>
-<%--						<li><a href="Patient Login.jsp">Patient Login</a></li>--%>
-						<li><a href="login.jsp">Login</a></li>
+						<li><a href="login_admin.jsp">Admin Login</a></li>
+						<li><a href="login_doctor.jsp">Doctor Login</a></li>
+						<li><a href="login_patient.jsp">Patient Login</a></li>
+<%--						<li><a href="login.jsp">Login</a></li>--%>
 					</ul>
 				</nav>
 			</div>
