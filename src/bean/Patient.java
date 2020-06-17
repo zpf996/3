@@ -1,7 +1,7 @@
 package bean;
 
 public class Patient {
-    private String Id;
+    private int Id;
     private String password;
     private String PatientName;
     private String FamilyName;
@@ -9,7 +9,15 @@ public class Patient {
     private String Gender;
     private String Email;
     private String Contact;
-    private byte[] photo;
+    private String photo;
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     public String getPassword() {
         return password;
@@ -19,11 +27,11 @@ public class Patient {
         this.password = password;
     }
 
-    public String getId() {
+    public int getId() {
         return Id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         Id = id;
     }
 
@@ -75,11 +83,5 @@ public class Patient {
         Contact = contact;
     }
 
-    public byte[] getPhoto() {
-        return photo;
-    }
 
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
-    }
 }

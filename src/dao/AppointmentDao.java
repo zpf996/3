@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface AppointmentDao {
     public boolean login(String doctor,String patient);
-    public boolean register(int id,String doctor,String patient,String healthissue);
-    public List<Appointment> getAppointAll();
+    public boolean register(Appointment appointment);
+    public List<Appointment> getAppointmentAll();
     public boolean delete(String id);
-    public boolean update(int id,String doctor,String patient,String healthissue);
+    public boolean update(int id,int doctor,int patient,String healthissue);
 }

@@ -227,10 +227,18 @@
             <form action="reg_patient">
                 <div class="row">
                     <div class="col-25">
+                        <label for="fname">ID</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fname" name="id" placeholder="Your id">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
                         <label for="fname">Name</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        <input type="text" id="fname" name="name" placeholder="Your name..">
                     </div>
                 </div>
                 <div class="row">
@@ -238,7 +246,7 @@
                         <label for="fname">Password</label>
                     </div>
                     <div class="col-75">
-                        <input type="password" id="fname" name="firstname" placeholder="Password">
+                        <input type="password" id="fname" name="password" placeholder="Password">
                     </div>
                 </div>
                 <div class="row">
@@ -246,7 +254,7 @@
                         <label for="lname">Father/Husband Name </label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Qualification">
+                        <input type="text" id="lname" name="familyname" placeholder="Father/Husband Name">
                     </div>
                 </div>
                 <div class="row">
@@ -254,7 +262,7 @@
                         <label for="lname">Age</label>
                     </div>
                     <div class="col-75">
-                        <input type="date" id="lname" name="lastname" placeholder="age">
+                        <input type="text" id="lname" name="age" placeholder="age">
                     </div>
                 </div>
                 <div class="row">
@@ -262,7 +270,7 @@
                         <label for="lname">Gender</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="man/woman">
+                        <input type="text" id="lname" name="gebder" placeholder="man/woman">
                     </div>
                 </div>
                 <div class="row">
@@ -270,7 +278,7 @@
                         <label for="lname">Email ID</label>
                     </div>
                     <div class="col-75">
-                        <input type="email" id="lname" name="lastname" placeholder="email">
+                        <input type="email" id="lname" name="email" placeholder="email">
                     </div>
                 </div>
                 <div class="row">
@@ -278,7 +286,7 @@
                         <label for="lname">Contact</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Contact">
+                        <input type="text" id="lname" name="contact" placeholder="Contact">
                     </div>
                 </div>
                 <div class="row">
@@ -286,7 +294,7 @@
                         <label for="lname">phtotograph</label>
                     </div>
                     <div class="col-75">
-                        <input type="image" id="lname" name="lastname" placeholder="">
+                        <input type="text" id="lname" name="photo" placeholder="">
                     </div>
                 </div>
                 <div class="row">

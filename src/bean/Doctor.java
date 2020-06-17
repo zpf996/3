@@ -1,8 +1,8 @@
 package bean;
 
 public class Doctor {
-    private String Id;
-    private String DoctorName;
+    private int Id;
+    private String name;
     private String password;
     private String Qualification;//资格
     private String Specialization;//专业化
@@ -10,20 +10,28 @@ public class Doctor {
     private String Contact;//接触
     private String Email;
 
-    public String getId() {
+    public int getId() {
         return Id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         Id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDoctorName() {
-        return DoctorName;
+        return name;
     }
 
     public void setDoctorName(String doctorName) {
-        DoctorName = doctorName;
+        name = doctorName;
     }
 
     public String getPassword() {
@@ -72,5 +80,8 @@ public class Doctor {
 
     public void setEmail(String email) {
         Email = email;
+    }
+    public void ss(){
+        System.out.println(Email+"222222");
     }
 }

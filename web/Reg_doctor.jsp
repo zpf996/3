@@ -5,7 +5,12 @@
   Time: 16:15
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -223,13 +228,21 @@
         <p>Doctor message</p>
 
         <div class="container">
-            <form action="/action_page.php">
+            <form action="reg_Doctor">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="name">ID</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="name" required="required" name="id" placeholder="Your name..">
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-25">
                         <label for="name">Name</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="name" name="firstname" placeholder="Your name..">
+                        <input type="text" id="name" required="required" name="name" placeholder="Your name..">
                     </div>
                 </div>
                 <div class="row">
@@ -237,7 +250,7 @@
                         <label for="password">Password</label>
                     </div>
                     <div class="col-75">
-                        <input type="password" id="password" name="lastname" placeholder="password">
+                        <input type="password" id="password" required="required"name="passowrd" placeholder="password">
                     </div>
                 </div>
                 <div class="row">
@@ -245,7 +258,7 @@
                         <label for="lname">Qualification</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Qualification">
+                        <input type="text" id="lname"required="required" name="qualification" placeholder="Qualification">
                     </div>
                 </div>
                 <div class="row">
@@ -253,7 +266,7 @@
                         <label for="lname">Experience</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Experience">
+                        <input type="text" id="lname"required="required" name="experience" placeholder="Experience">
                     </div>
                 </div>
                 <div class="row">
@@ -261,7 +274,7 @@
                         <label for="lname">Specialization</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Specialization">
+                        <input type="date" id="lname" required="required"name="specialization" placeholder="Specialization">
                     </div>
                 </div>
                 <div class="row">
@@ -269,7 +282,7 @@
                         <label for="lname">Contact</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="Specialization">
+                        <input type="text" id="lname" required="required"name="contact" placeholder="Specialization">
                     </div>
                 </div>
                 <div class="row">
@@ -277,7 +290,7 @@
                         <label for="lname">Email ID</label>
                     </div>
                     <div class="col-75">
-                        <input type="email" id="lname" name="lastname" placeholder="Email ID">
+                        <input type="email" id="lname" required="required"name="email" placeholder="Email ID">
                     </div>
                 </div>
                 <div class="row">
@@ -285,7 +298,7 @@
                         <label for="lname">operation</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="lastname" placeholder="operation">
+                        <input type="text" id="lname" required="required"name="operation" placeholder="operation">
                     </div>
                 </div>
                 <div class="row">

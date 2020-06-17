@@ -200,7 +200,7 @@
     <form name="form" action="login_admin" method="post" >
         <input type="text" required="required" placeholder="username" name="name"></input>
         <input type="password" required="required" placeholder="password" name="password"></input>
-        <button class="bu" type="button"><a id="o" href="Reg_patient.jsp">register</a></button>
+<%--        <button class="bu" type="button"><a id="o" href="Reg_patient.jsp">register</a></button>--%>
         <br />
         <%--        <select name="m" class="bu">--%>
         <%--            <option  value="1">Patient</option>--%>

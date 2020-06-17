@@ -1,8 +1,13 @@
 package dao.imp;
 
 import bean.Appointment;
+import bean.Doctor;
 import dao.AppointmentDao;
+import util.DBconn;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AppoinmentDaoImp implements AppointmentDao {
@@ -12,12 +17,44 @@ public class AppoinmentDaoImp implements AppointmentDao {
     }
 
     @Override
-    public boolean register(int id, String doctor, String patient, String healthissue) {
-        return false;
+    public boolean register(Appointment appointment) {
+        boolean flag = false;
+        DBconn.init();
+        int i =DBconn.addUpdDel("insert into appointment (id,doctor_id,patient_id,health issue) "+
+                "values('"+appointment.getId()+"" +
+                "','"+appointment.getDoctor_id()+"" +
+                "','"+appointment.getPatient_id()+"" +
+                "','"+appointment.getHealthissue()+"" +
+                "')");
+        if(i>0){
+            flag = true;
+        }
+        else{
+            System.out.println("insert error");
+        }
+        DBconn.closeConn();
+        return flag;
     }
 
     @Override
-    public List<Appointment> getAppointAll() {
+    public List<Appointment> getAppointmentAll() {
+        List<Appointment> list = new ArrayList<Appointment>();
+        try {
+            DBconn.init();
+            ResultSet rs = DBconn.selectSql("select * from appointment");
+            while(rs.next()){
+                Appointment appointment=new Appointment();
+                appointment.getId();
+                appointment.getDoctor_id();
+                appointment.getPatient_id();
+                appointment.getHealthissue();
+                list.add(appointment);
+            }
+            DBconn.closeConn();
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
@@ -27,7 +64,7 @@ public class AppoinmentDaoImp implements AppointmentDao {
     }
 
     @Override
-    public boolean update(int id, String doctor, String patient, String healthissue) {
+    public boolean update(int id, int doctor, int patient, String healthissue) {
         return false;
     }
 }

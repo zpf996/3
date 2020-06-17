@@ -1,4 +1,20 @@
+<%@ page import="dao.DoctorDao" %>
+<%@ page import="dao.imp.DoctorDaoImp" %>
+<%@ page import="bean.Doctor" %>
+<%@ page import="java.util.List" %>
+<%@ page import="dao.PatientDao" %>
+<%@ page import="dao.imp.PatientDaoImp" %>
+<%@ page import="bean.Patient" %>
+<%@ page import="bean.Appointment" %>
+<%@ page import="dao.AppointmentDao" %>
+<%@ page import="dao.imp.AppoinmentDaoImp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <style>
@@ -89,7 +105,7 @@
 <%--                <li><a href="Doctor Login.jsp">Doctor Login</a></li>--%>
 <%--                <li><a href="Patient Login.jsp">Patient Login</a></li>--%>
                 <li><a href="login.jsp">Login</a></li>
-                <li><a href="login out.jsp">Login out</a></li>
+                <li><a href="index.jsp">Login out</a></li>
             </ul>
         </nav>
         <!-- /Navigation -->
@@ -137,24 +153,41 @@
                 <th>Qualification</th>
                 <th>Specialization</th>
                 <th>Experience</th>
-                <th>Contact<not null></th>
+                <th>Contact</th>
                 <th>Email ID</th>
                 <th>operation</th>
             </tr>
-            <c:forEach var="U" items="${userAll}"  >
-                <form action="UpdateUser" method="post">
-                    <tr>
-                        <td><input type="text" value="${U.id}" name="id" ></td>
-                        <td><input type="text" value="${U.name}" name="name"></td>
-                        <td><input type="text" value="${U.sex}" name="sex"></td>
-                        <td><input type="text" value="${U.pwd}" name="pwd"></td>
-                        <td><input type="text" value="${U.home}" name="home"></td>
-                        <td><input type="text" value="${U.info}" name="info"></td>
-                        <td><input type="text" value="${U.info}" name="info"></td>
-                        <td><a href="DeleteUser?id=${U.id}">Delete</a></td>
-                    </tr>
-                </form>
-            </c:forEach>
+            <%
+                DoctorDao ud = new DoctorDaoImp();
+                List<Doctor> userAll = ud.getDoctorAll();
+                for(Doctor doctor:userAll)
+                {%>
+            <tr>
+                <td><%=doctor.getId()%></td>
+                <td><%=doctor.getDoctorName()%></td>
+                <td><%=doctor.getQualification()%></td>
+                <td><%=doctor.getSpecialization()%></td>
+                <td><%=doctor.getExperience()%></td>
+                <td><%=doctor.getContact()%></td>
+                <td><%=doctor.getEmail()%></td>
+            </tr>
+            <%}%>
+<%--            <c:forEach var="U" items="${userAll}"  >--%>
+<%--                <form action="Doctor_list" method="post">--%>
+<%--                    <tr>--%>
+<%--                        <td><input type="text" value="${U.id}" name="id" ></td>--%>
+<%--                        <td><input type="text" value="${U.Doctorame}" name="Doctorame"></td>--%>
+<%--                        <td><input type="text" value="${U.Qualification}" name="Qualification"></td>--%>
+<%--                        <td><input type="text" value="${U.Specialization}" name="Specialization"></td>--%>
+<%--                        <td><input type="text" value="${U.Experience}" name="Experience"></td>--%>
+<%--                        <td><input type="text" value="${U.Contact}" name="Contact"></td>--%>
+<%--                        <td><input type="text" value="${U.Email}" name="Email"></td>--%>
+<%--                        <td><a href="DeleteUser?id=${U.id}">Delete</a></td>--%>
+<%--                    </tr>--%>
+<%--                    <input type="submit" value="更新"/>--%>
+<%--                    <button type="submit">111111</button>--%>
+<%--                </form>--%>
+<%--            </c:forEach>--%>
         </table>
 
         <!-- /Hero-area -->
@@ -166,16 +199,28 @@
             <tr>
                 <th>Doctor</th>
                 <th>Patient</th>
+                <th>Health issue</th>
             </tr>
-            <c:forEach var="U" items="${userAll}"  >
-                <form action="UpdateUser" method="post">
-                    <tr>
-                        <td><input type="text" value="${U.id}" name="id" ></td>
-                        <td><input type="text" value="${U.name}" name="name"></td>
-<%--                        <td><a href="DeleteUser?id=${U.id}">Delete</a></td>--%>
-                    </tr>
-                </form>
-            </c:forEach>
+            <%
+                AppointmentDao u = new AppoinmentDaoImp();
+                List<Appointment> u1 = u.getAppointmentAll();
+                for(Appointment appointment:u1)
+                {%>
+            <tr>
+                <td><%=appointment.getDoctor_id()%></td>
+                <td><%=appointment.getPatient_id()%></td>
+                <td><%=appointment.getHealthissue()%></td>
+            </tr>
+            <%}%>
+<%--            <c:forEach var="U" items="${userAll}"  >--%>
+<%--                <form action="UpdateUser" method="post">--%>
+<%--                    <tr>--%>
+<%--                        <td><input type="text" value="${U.id}" name="id" ></td>--%>
+<%--                        <td><input type="text" value="${U.name}" name="name"></td>--%>
+<%--&lt;%&ndash;                        <td><a href="DeleteUser?id=${U.id}">Delete</a></td>&ndash;%&gt;--%>
+<%--                    </tr>--%>
+<%--                </form>--%>
+<%--            </c:forEach>--%>
         </table>
         </div>
     </div>

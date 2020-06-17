@@ -24,6 +24,7 @@ public class DBconn {
         int i=0;
         try{
             PreparedStatement ps=conn.prepareStatement(sql);
+            i =  ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println("sql数据库增删改查异常");
             e.printStackTrace();

@@ -16,10 +16,10 @@ public class PatientDaoImp implements PatientDao {
         boolean flag=false;
             try{
                 DBconn.init();
-                ResultSet rs=DBconn.selectSql("select from patient where Doctor Name='"+name+"'and password='"+password+"'");
+                ResultSet rs=DBconn.selectSql("select * from patient where PatientName='"+name+"'and Password='"+password+"'");
                 while(rs.next()){
-                    if(rs.getString("Patient Name").equals(name)&&
-                            rs.getString("password").equals(password)){
+                    if(rs.getString("PatientName").equals(name)&&
+                            rs.getString("Password").equals(password)){
                         flag=true;
                     }
                 }
@@ -33,7 +33,7 @@ public class PatientDaoImp implements PatientDao {
     public boolean register(Patient patient) {
         boolean flag=false;
         DBconn.init();
-        int i =DBconn.addUpdDel("insert into patient(Patient_Id,Password,Patient Name,Father / Husband Name,Age,Gender,Contact,Photograph) " +
+        int i =DBconn.addUpdDel("insert into patient(Patient_Id,Password,PatientName,FatherHusbandName,Age,Gender,Contact,Photograph) " +
                 "values('"+patient.getId()+"" +
                 "','"+patient.getPassword()+"" +
                 "','"+patient.getPatientName()+"" +
@@ -58,15 +58,15 @@ public class PatientDaoImp implements PatientDao {
             ResultSet rs = DBconn.selectSql("select * from patient");
             while(rs.next()){
                 Patient patient = new Patient();
-                patient.setId(rs.getString("Patient_Id"));
+                patient.setId(rs.getInt("Patient_Id"));
                 patient.setPassword(rs.getString("Password"));
-                patient.setPatientName(rs.getString("Patient Name"));
-                patient.setFamilyName(rs.getString("Father / Husband Name"));
+                patient.setPatientName(rs.getString("PatientName"));
+                patient.setFamilyName(rs.getString("FatherHusbandName"));
                 patient.setAge(rs.getString("Age"));
                 patient.setGender(rs.getString("Gender"));
-                patient.setEmail(rs.getString("Email ID"));
+                patient.setEmail(rs.getString("EmailID"));
                 patient.setContact(rs.getString("Contact"));
-                patient.setPhoto(rs.getBytes("Photograph"));
+                patient.setPhoto(rs.getString("Photograph"));
                 list.add(patient);
             }
             DBconn.closeConn();
@@ -83,14 +83,14 @@ public class PatientDaoImp implements PatientDao {
     }
 
     @Override
-    public boolean update(String id, String name, String familyname, String Age, String gender, String email, String contact, byte[] photo) {
+    public boolean update(int id, String name, String familyname, String Age, String gender, String email, String contact, String photo) {
         boolean flag=false;
         DBconn.init();
-        String sql="update patient set Patient Name='"+name
-                + "',Father / Husband Name'"+familyname
+        String sql="update patient set PatientName='"+name
+                + "',Father/HusbandName'"+familyname
                 +"',Age='"+Age
                 +"',Gender='"+gender
-                +"',Email ID='"+email
+                +"',EmailID='"+email
                 +"',Contact='"+contact
                 +"'Photograph'"+photo+"'where Patient_Id="+id;
         int i=DBconn.addUpdDel(sql);
