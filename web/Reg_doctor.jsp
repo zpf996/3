@@ -16,6 +16,7 @@
 <head>
     <style>
         #login {
+            margin:0 auto;
             width: 1662px;
             height: 700px;
         }

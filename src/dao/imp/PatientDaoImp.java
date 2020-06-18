@@ -33,7 +33,7 @@ public class PatientDaoImp implements PatientDao {
     public boolean register(Patient patient) {
         boolean flag=false;
         DBconn.init();
-        int i =DBconn.addUpdDel("insert into patient(Patient_Id,Password,PatientName,FatherHusbandName,Age,Gender,Contact,Photograph) " +
+        int i =DBconn.addUpdDel("insert into patient(Patient_Id,Password,PatientName,FatherHusbandName,Age,Gender,Contact,EmailID,Photograph) " +
                 "values('"+patient.getId()+"" +
                 "','"+patient.getPassword()+"" +
                 "','"+patient.getPatientName()+"" +
@@ -41,6 +41,7 @@ public class PatientDaoImp implements PatientDao {
                 "','"+patient.getAge()+""+
                 "','"+patient.getGender()+""+
                 "','"+patient.getContact()+""+
+                "','"+patient.getEmail()+""+
                 "','"+patient.getPhoto()+""+
                 "')");
         if(i>0){

@@ -40,6 +40,7 @@ public class DoctorDaoImp implements DoctorDao {
                 doctor.setQualification(rs.getString("Qualification"));
                 doctor.setSpecialization(rs.getString("Specialization"));
                 doctor.setExperience(rs.getString("Experience"));
+                doctor.setContact(rs.getString("Contact"));
                 doctor.setEmail(rs.getString("Email_ID"));
                 doctor.setPassword(rs.getString("password"));
                 list.add(doctor);
@@ -82,7 +83,7 @@ public class DoctorDaoImp implements DoctorDao {
     public boolean delete(int id) {
         boolean flag = false;
         DBconn.init();
-        String sql = "delete  from doctor where Medicine_ID="+id;
+        String sql = "delete  from doctor where id="+id;
         int i =DBconn.addUpdDel(sql);
         if(i>0){
             flag = true;
@@ -113,16 +114,16 @@ public class DoctorDaoImp implements DoctorDao {
     }
 
     @Override
-    public boolean update(int id,String name,String qualificication,String speciallization,String experience,String contact,String email,String password) {
+    public boolean update(int id,String name,String qualificication,String speciallization,String experience,String contact,String email) {
        boolean flag=false;
        DBconn.init();
        String sql="update doctor set Doctorname='"+name
-               + "',Qualificat'"+qualificication
+               + "',Qualification='"+qualificication
                +"',Specialization='"+speciallization
                +"',Experience='"+experience
                +"',Contact='"+contact
                +"',Email_ID='"+email
-               +"'password'"+"'where id="+id;
+               +"'where id="+id;
        int i=DBconn.addUpdDel(sql);
        if(i>0){
            flag=true;

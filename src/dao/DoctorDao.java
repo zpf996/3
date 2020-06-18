@@ -8,6 +8,6 @@ public interface DoctorDao {
     public boolean register(Doctor daoctor);//register
     public boolean delete(int id);//delete
     public boolean view(int id,String name,String qualificication,String speciallization,String experience,String contact,String email,String password);
-    public boolean update(int id,String name,String qualificication,String speciallization,String experience,String contact,String email,String password);//view patient
+    public boolean update(int id,String name,String qualificication,String speciallization,String experience,String contact,String email);//view patient
 
 }

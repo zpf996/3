@@ -48,9 +48,16 @@
         <servlet-name>reg_patient</servlet-name>
         <servlet-class>servlet.registered.reg_patient</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DoctorDelete</servlet-name>
+        <servlet-class>servlet.delete.DoctorDelete</servlet-class>
+    </servlet>
+
     
-    
-    
+    <servlet-mapping>
+        <servlet-name>DoctorDelete</servlet-name>
+        <url-pattern>/DoctorDelete</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>reg_patient</servlet-name>
         <url-pattern>/reg_patient</url-pattern>

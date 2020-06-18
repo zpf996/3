@@ -44,10 +44,10 @@ public class AppoinmentDaoImp implements AppointmentDao {
             ResultSet rs = DBconn.selectSql("select * from appointment");
             while(rs.next()){
                 Appointment appointment=new Appointment();
-                appointment.getId();
-                appointment.getDoctor_id();
-                appointment.getPatient_id();
-                appointment.getHealthissue();
+                appointment.setId(rs.getInt("id"));
+                appointment.setDoctor_id(rs.getInt("doctor_id"));
+                appointment.setPatient_id(rs.getInt("patient_id"));
+                appointment.setHealthissue(rs.getString("health issue"));
                 list.add(appointment);
             }
             DBconn.closeConn();

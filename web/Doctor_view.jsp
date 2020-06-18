@@ -15,6 +15,7 @@
 <head>
     <style>
         #login {
+            margin:0 auto;
             width: 1662px;
             height: 700px;
         }
@@ -23,7 +24,7 @@
         #login_2 {
             margin: 30px auto 0 auto;
 
-            width: 1662px;
+            width: 80%;
             height: 300px;
             background-color: #FFFFFF;
         }
@@ -158,14 +159,14 @@
         <h1>welcome Doctor</h1>
         <h2>your patients</h2>
         <table id="customers">
-            <caption>
-                <form name="input" action="Reg_doctor.jsp" method="get">
-                    <input type="submit" value="add" />
-                </form>
-                <form name="input" action="" method="get">
-                    <input type="submit" value="update" />
-                </form>
-            </caption>
+<%--            <caption>--%>
+<%--                <form name="input" action="Reg_doctor.jsp" method="get"style="vertical-align:middle;text-align: center">--%>
+<%--                    <input type="submit" value="add" />--%>
+<%--                </form>--%>
+<%--                <form name="input" action="" method="get"style="vertical-align:middle;text-align: center">--%>
+<%--                    <input type="submit" value="update" />--%>
+<%--                </form>--%>
+<%--            </caption>--%>
             <tr>
                 <th>ID</th>
                 <th>name</th>
@@ -193,30 +194,7 @@
 
             </tr>
             <%}%>
-<%--            <c:forEach var="U" items="${userAll}">--%>
-<%--                <form action="UpdateUser" method="post">--%>
-<%--                    <tr>--%>
-<%--                        <td><input type="text" value="${U.id}" name="id"></td>--%>
-<%--                        <td><input type="text" value="${U.name}" name="name"></td>--%>
-<%--                        <td><input type="text" value="${U.sex}" name="sex"></td>--%>
-<%--                        <td><input type="text" value="${U.pwd}" name="pwd"></td>--%>
-<%--                        <td><input type="text" value="${U.home}" name="home"></td>--%>
-<%--                        <td><input type="text" value="${U.info}" name="info"></td>--%>
-<%--                        <td><input type="text" value="${U.info}" name="info"></td>--%>
-<%--                        <td><a href="DeleteUser?id=${U.id}">Cure</a></td>--%>
-<%--                    </tr>--%>
-<%--                    <tr>--%>
-<%--                        <td><input type="text" value="" name="id"></td>--%>
-<%--                        <td><input type="text" value="" name="name"></td>--%>
-<%--                        <td><input type="text" value="" name="sex"></td>--%>
-<%--                        <td><input type="text" value="" name="pwd"></td>--%>
-<%--                        <td><input type="text" value="" name="home"></td>--%>
-<%--                        <td><input type="text" value="" name="info"></td>--%>
-<%--                        <td><input type="text" value="" name="info"></td>--%>
-<%--                        <td><a href="DeleteUser?id=${U.id}">Cure</a></td>--%>
-<%--                    </tr>--%>
-<%--                </form>--%>
-<%--            </c:forEach>--%>
+
         </table>
 
         <!-- /Hero-area -->

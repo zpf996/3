@@ -12,6 +12,7 @@
 <head>
     <style>
         #login {
+            margin:0 auto;
             width: 1662px;
             height: 1000px;
         }
@@ -19,7 +20,7 @@
         #login_1 {
             margin: 30px auto 0 auto;
 
-            width: 1662px;
+            width: 80%;
             /*height: 500px;*/
             background-color: #FFFFFF;
         }
@@ -404,7 +405,7 @@
                         <label for="name">Name</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="name" name="firstname" placeholder="Your name..">
+                        <input type="text" id="name" name="name" placeholder="Your name..">
                     </div>
                 </div>
                 <div class="row">
@@ -412,7 +413,7 @@
                         <label for="name">Health issue</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="Health issue" name="firstname" placeholder="Your Health issue..">
+                        <input type="text" id="Health issue" name="issue" placeholder="Your Health issue..">
                     </div>
                 </div>
         </div>

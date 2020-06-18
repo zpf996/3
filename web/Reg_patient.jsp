@@ -11,6 +11,7 @@
 <head>
     <style>
         #login {
+            margin:0 auto;
             width: 1662px;
             height: 700px;
         }
@@ -270,7 +271,7 @@
                         <label for="lname">Gender</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="lname" name="gebder" placeholder="man/woman">
+                        <input type="text" id="lname" name="gender" placeholder="man/woman">
                     </div>
                 </div>
                 <div class="row">

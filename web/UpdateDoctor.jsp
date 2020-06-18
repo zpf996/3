@@ -36,19 +36,19 @@
         }
     </style>
     <style>
-        #customers,#customerss,#customersss
+        #customers,#customerss
         {
             font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
             width:100%;
             border-collapse:collapse;
         }
-        #customers td, #customers th,#customerss td,#customerss th,#customersss th,#customersss td
+        #customers td, #customers th,#customerss td,#customerss th
         {
             font-size:1em;
             border:1px solid #98bf21;
             padding:3px 7px 2px 7px;
         }
-        #customers th,#customerss th,#customersss th
+        #customers th,#customerss th
         {
             font-size:1.1em;
             text-align:left;
@@ -205,16 +205,16 @@
                 <th>operation</th>
             </tr>
             <form action="Doctor_update" method="post">
-                <tr>
-                    <td><input type="text" required="required" name="id" ></td>
-                    <td><input type="text" required="required" name="name"></td>
-                    <td><input type="text" required="required" name="Qualification"></td>
-                    <td><input type="date" required="required" name="Specialization"></td>
-                    <td><input type="text" required="required" name="Experience"></td>
-                    <td><input type="text" required="required" name="Contact"></td>
-                    <td><input type="text" required="required" name="Email"></td>
-                    <td><input type="submit" value="update"></td>
-                </tr>
+            <tr>
+                <td><input type="text" required="required" name="id" ></td>--%>
+                <td><input type="text" required="required" name="name"></td>
+                <td><input type="text" required="required" name="Qualification"></td>
+                <td><input type="text" required="required" name="Specialization"></td>
+                <td><input type="text" required="required" name="Experience"></td>
+                <td><input type="text" required="required" name="Contact"></td>
+                <td><input type="text" required="required" name="Email"></td>
+                <td><input type="submit" value="update"></td>
+            </tr>
             </form>
         </table>
         <!-- /Hero-area -->
