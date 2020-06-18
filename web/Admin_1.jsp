@@ -253,6 +253,8 @@
 </div>
 <br>
 <br>
+
+</body>
 <footer id="footer" class="section">
     <div class="container">
         <div class="row">
@@ -276,9 +278,8 @@
             </div>
         </div>
 
-
-</body>
-
+    </div>
+</footer>
 
 
 </html>

@@ -232,8 +232,10 @@
         <h1>welcome Patient</h1>
         <h2>Doctor List</h2>
         <div class="search">
-            <input type="text" placeholder="press..." name="" id="" value="" />
+            <form name="input" action="Doctor_research" method="post" >
+            <input type="text" placeholder="press..." name="" id="id" value="" />
             <button><i>Go</i></button>
+            </form>
         </div>
         <table id="customers">
             <!-- <caption>
@@ -299,127 +301,129 @@
                 <th>medicine</th>
                 <th>physical examination</th>
             </tr>
-            <c:forEach var="U" items="${userAll}">
-                <form action="UpdateUser" method="post">
-                    <tr>
-                        <td><input type="text" value="${U.name}" name="doctorname"></td>
-                        <td><input type="text" value="${U.name}" name="suggestion"></td>
-                        <td><input type="text" value="${U.name}" name="medicine"></td>
-                        <td><input type="text" value="${U.name}" name="physical examination"></td>
-                        <!-- <td>
-								<a href="DeleteUser?id=${U.id}">accept</a>
-								<br>
-								<a href="DeleteUser?id=${U.id}">Refuse</a>
-							</td>--%> -->
-                    </tr>
-                </form>
-            </c:forEach>
+           <tr>
+               <td></td>
+           </tr>
         </table>
     </div>
-    <div id="login_3">
-        <html>
+    <html>
 
-        <head>
-            <style>
-                * {
-                    box-sizing: border-box;
-                }
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
 
-                input[type=text],
-                input[type=password],
-                input[type=email],
-                select,
-                textarea {
-                    width: 100%;
-                    padding: 12px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    resize: vertical;
-                }
+            input[type=text],
+            input[type=password],
+            input[type=email],
+            select,
+            textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+            }
 
-                label {
-                    padding: 12px 12px 12px 0;
-                    display: inline-block;
-                }
+            label {
+                padding: 12px 12px 12px 0;
+                display: inline-block;
+            }
 
+            input[type=submit] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float: right;
+            }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+            .container {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+            }
+
+            .col-25 {
+                float: left;
+                width: 25%;
+                margin-top: 6px;
+            }
+
+            .col-75 {
+                float: left;
+                width: 75%;
+                margin-top: 6px;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            @media screen and (max-width: 600px) {
+
+                .col-25,
+                .col-75,
                 input[type=submit] {
-                    background-color: #4CAF50;
-                    color: white;
-                    padding: 12px 20px;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    float: right;
+                    width: 100%;
+                    margin-top: 0;
                 }
+            }
+        </style>
+    </head>
 
-                input[type=submit]:hover {
-                    background-color: #45a049;
-                }
+    <body>
 
-                .container {
-                    border-radius: 5px;
-                    background-color: #f2f2f2;
-                    padding: 20px;
-                }
-
-                .col-25 {
-                    float: left;
-                    width: 25%;
-                    margin-top: 6px;
-                }
-
-                .col-75 {
-                    float: left;
-                    width: 75%;
-                    margin-top: 6px;
-                }
-
-                /* 清除浮动 */
-                .row:after {
-                    content: "";
-                    display: table;
-                    clear: both;
-                }
-
-                /* 响应式布局 layout - 在屏幕宽度小于 600px 时， 设置为上下堆叠元素 */
-                @media screen and (max-width: 600px) {
-
-                    .col-25,
-                    .col-75,
-                    input[type=submit] {
-                        width: 100%;
-                        margin-top: 0;
-                    }
-                }
-            </style>
-        </head>
-
-        <body>
-
-        <h2>Make an appointment</h2>
-
+    <h2>Make an appointment</h2>
+    <form name="input" action="reg_appointment" method="post" style="vertical-align:middle;text-align: center">
         <div class="container">
-            <form action="/action_page.php">
-                <div class="row">
-                    <div class="col-25">
-                        <label for="name">Name</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="name" name="name" placeholder="Your name..">
-                    </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="name">ID</label>
                 </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="name">Health issue</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="Health issue" name="issue" placeholder="Your Health issue..">
-                    </div>
+                <div class="col-75">
+                    <input type="text" id="name" name="id" placeholder="press some number">
                 </div>
-        </div>
-    </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="name">Patient id</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="name" name="patient" placeholder="Your id">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="name">Doctor id</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="name" name="doctor" placeholder="doctor id">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="name">Health issue</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="Health issue" name="healthissue" placeholder="Your Health issue..">
+                </div>
+            </div>
 
+            <input type="submit" value="submit" />
+
+        </div>
     </form>
+
 </div>
 
 </body>

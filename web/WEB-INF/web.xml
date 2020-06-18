@@ -52,8 +52,24 @@
         <servlet-name>DoctorDelete</servlet-name>
         <servlet-class>servlet.delete.DoctorDelete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>reg_medical_record</servlet-name>
+        <servlet-class>servlet.registered.reg_medical_record</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>reg_appointment</servlet-name>
+        <servlet-class>servlet.registered.reg_appointment</servlet-class>
+    </servlet>
 
     
+    <servlet-mapping>
+        <servlet-name>reg_appointment</servlet-name>
+        <url-pattern>/reg_appointment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>reg_medical_record</servlet-name>
+        <url-pattern>/reg_medical_record</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DoctorDelete</servlet-name>
         <url-pattern>/DoctorDelete</url-pattern>

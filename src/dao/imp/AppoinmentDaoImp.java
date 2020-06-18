@@ -20,7 +20,7 @@ public class AppoinmentDaoImp implements AppointmentDao {
     public boolean register(Appointment appointment) {
         boolean flag = false;
         DBconn.init();
-        int i =DBconn.addUpdDel("insert into appointment (id,doctor_id,patient_id,health issue) "+
+        int i =DBconn.addUpdDel("insert into appointment (id,doctor_id,patient_id,healthissue) "+
                 "values('"+appointment.getId()+"" +
                 "','"+appointment.getDoctor_id()+"" +
                 "','"+appointment.getPatient_id()+"" +
@@ -47,7 +47,7 @@ public class AppoinmentDaoImp implements AppointmentDao {
                 appointment.setId(rs.getInt("id"));
                 appointment.setDoctor_id(rs.getInt("doctor_id"));
                 appointment.setPatient_id(rs.getInt("patient_id"));
-                appointment.setHealthissue(rs.getString("health issue"));
+                appointment.setHealthissue(rs.getString("healthissue"));
                 list.add(appointment);
             }
             DBconn.closeConn();

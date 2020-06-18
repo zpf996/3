@@ -1,12 +1,9 @@
 package servlet.registered;
 
-import bean.Appointment;
 import bean.Doctor;
 import bean.Medical_record;
-import dao.AppointmentDao;
 import dao.DoctorDao;
 import dao.Medical_recordDao;
-import dao.imp.AppoinmentDaoImp;
 import dao.imp.DoctorDaoImp;
 import dao.imp.Medical_recordDapImp;
 
@@ -16,32 +13,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class reg_appointment extends HttpServlet {
+public class reg_medical_record extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doPost(request, response);
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id= Integer.parseInt(request.getParameter("id"));
         int doctor_id= Integer.parseInt(request.getParameter("doctor"));
         int patient_id= Integer.parseInt(request.getParameter("patient"));
-        String health_issue = request.getParameter("healthissue");
+        int medicine_id= Integer.parseInt(request.getParameter("medicine_id"));
+        String suggestion = request.getParameter("suggestion");
+        String pe = request.getParameter("pe");
 
-        Appointment appointment=new Appointment();
-        appointment.setId(id);
-        appointment.setDoctor_id(doctor_id);
-        appointment.setPatient_id(patient_id);
-        appointment.setHealthissue(health_issue);
+        Medical_record medical_record=new Medical_record();
+        medical_record.setDoctor(doctor_id);
+        medical_record.setPatient(patient_id);
+        medical_record.setMedicine_id(medicine_id);
+        medical_record.setSuggestion(suggestion);
+        medical_record.setPhysical_examination(pe);
 
-        AppointmentDao ud = new AppoinmentDaoImp();
+        Medical_recordDao ud = new Medical_recordDapImp();
 
-        if(ud.register(appointment)){
-            request.setAttribute("patient_id", patient_id);  //向request域中放置参数
-            request.getRequestDispatcher("/Patient_view.jsp").forward(request, response);
+        if(ud.register(medical_record)){
+            request.getRequestDispatcher("/Doctor_view.jsp").forward(request, response);
         }else{
 
-            response.sendRedirect("failed.jsp");
+            response.sendRedirect("failed,jsp");
         }
     }
 }

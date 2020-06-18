@@ -113,9 +113,6 @@
             <ul class="main-menu nav navbar-nav navbar-right">
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="Registered subject.jsp">Registered subject</a></li>
-                <%--                <li><a href="Admin Login.jsp">Admin Login</a></li>--%>
-                <%--                <li><a href="Doctor Login.jsp">Doctor Login</a></li>--%>
-                <%--                <li><a href="Patient Login.jsp">Patient Login</a></li>--%>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="index.jsp">Login out</a></li>
             </ul>
@@ -159,14 +156,14 @@
         <h1>welcome Doctor</h1>
         <h2>your patients</h2>
         <table id="customers">
-<%--            <caption>--%>
+            <caption>
 <%--                <form name="input" action="Reg_doctor.jsp" method="get"style="vertical-align:middle;text-align: center">--%>
 <%--                    <input type="submit" value="add" />--%>
 <%--                </form>--%>
-<%--                <form name="input" action="" method="get"style="vertical-align:middle;text-align: center">--%>
+<%--                <form name="input" action="reg_medical_record" method="get" style="vertical-align:middle;text-align: center">--%>
 <%--                    <input type="submit" value="update" />--%>
-<%--                </form>--%>
-<%--            </caption>--%>
+                </form>
+            </caption>
             <tr>
                 <th>ID</th>
                 <th>name</th>
@@ -175,6 +172,7 @@
                 <th>Gender</th>
                 <th>Contact</th>
                 <th>Email ID</th>
+                <th>operation</th>
 <%--                <th>operation</th>--%>
             </tr>
             <%
@@ -194,6 +192,27 @@
 
             </tr>
             <%}%>
+            <table>
+                <tr>
+                    <th>Your ID</th>
+                    <th>Patient ID</th>
+                    <th>Suggestion</th>
+                    <th>Physical Examination</th>
+                    <th>Medicine ID</th>
+                </tr>
+                <form name="input" action="reg_medical_record" method="get" style="vertical-align:middle;text-align: center">
+                    <tr>
+                        <td><input type="text" required="required" name="doctor" ></td>
+                        <td><input type="text" required="required" name="patient" ></td>
+                        <td><input type="text" required="required" name="suggestion" ></td>
+                        <td><input type="text" required="required" name="pe" ></td>
+                        <td><input type="text" required="required" name="medicine_id" ></td>
+                        <td><input type="submit" value="send" /></td>
+                    </tr>
+
+                </form>
+
+            </table>
 
         </table>
 
