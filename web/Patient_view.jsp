@@ -2,6 +2,13 @@
 <%@ page import="bean.Doctor" %>
 <%@ page import="dao.imp.DoctorDaoImp" %>
 <%@ page import="java.util.List" %>
+<%@ page import="dao.AppointmentDao" %>
+<%@ page import="dao.imp.AppoinmentDaoImp" %>
+<%@ page import="bean.Appointment" %>
+<%@ page import="bean.Medical_record" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.Medical_recordDao" %>
+<%@ page import="dao.imp.Medical_recordDapImp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String path = request.getContextPath();
@@ -231,21 +238,8 @@
     <div id="login_1">
         <h1>welcome Patient</h1>
         <h2>Doctor List</h2>
-        <div class="search">
-            <form name="input" action="Doctor_research" method="post" >
-            <input type="text" placeholder="press..." name="" id="id" value="" />
-            <button><i>Go</i></button>
-            </form>
-        </div>
         <table id="customers">
-            <!-- <caption>
-                <form name="input" action="Reg_doctor.jsp" method="get">
-                    <input type="submit" value="add" />
-                </form>
-                <form name="input" action="" method="get">
-                    <input type="submit" value="update" />
-                </form>
-            </caption> -->
+
             <tr>
                 <th>ID</th>
                 <th>name</th>
@@ -301,9 +295,18 @@
                 <th>medicine</th>
                 <th>physical examination</th>
             </tr>
+            <% Medical_recordDao u=new Medical_recordDapImp();
+                List<Medical_record> u1 = u.getMedical_recordAll();
+            for(Medical_record medical_record:u1)
+            {
+            %>
            <tr>
-               <td></td>
+               <td><%=medical_record.getDoctor()%></td>
+               <td><%=medical_record.getSuggestion()%></td>
+               <td><%=medical_record.getMedicine_id()%></td>
+               <td><%=medical_record.getPatient()%></td>
            </tr>
+            <%}%>
         </table>
     </div>
     <html>
